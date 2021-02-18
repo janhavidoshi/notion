@@ -109,13 +109,20 @@ h1 {
 
 <script>
     function date() {
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-
-var today_new = mm + '/' + dd + '/' + yyyy;
-document.getElementById('date').innerHTML = today_new;
+        
+var months = new Array(7);
+weekday[0] = "Jan";
+weekday[1] = "Feb";
+weekday[2] = "March";
+weekday[3] = "April";
+weekday[4] = "May";
+weekday[5] = "June";
+weekday[6] = "July";
+weekday[5] = "Aug";
+weekday[5] = "Sept";
+weekday[5] = "Oct";
+weekday[5] = "Nov";
+weekday[5] = "Dec";
         
 var weekday = new Array(7);
 weekday[0] = "Sunday";
@@ -125,6 +132,16 @@ weekday[3] = "Wednesday";
 weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
+
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = weekday[today.getMonth()];
+var yyyy = today.getFullYear();
+
+var today_new = dd + ' ' + mm + ' ' + yyyy;
+document.getElementById('date').innerHTML = today_new;
+        
 var n = weekday[today.getDay()];
 
 document.getElementById('day').innerHTML = n;
