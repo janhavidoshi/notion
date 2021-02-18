@@ -111,18 +111,18 @@ h1 {
     function date() {
         
 var months = new Array(12);
-weekday[0] = "Jan";
-weekday[1] = "Feb";
-weekday[2] = "March";
-weekday[3] = "April";
-weekday[4] = "May";
-weekday[5] = "June";
-weekday[6] = "July";
-weekday[5] = "Aug";
-weekday[5] = "Sept";
-weekday[5] = "Oct";
-weekday[5] = "Nov";
-weekday[5] = "Dec";
+months[0] = "Jan";
+months[1] = "Feb";
+months[2] = "March";
+months[3] = "April";
+months[4] = "May";
+months[5] = "June";
+months[6] = "July";
+months[5] = "Aug";
+months[5] = "Sept";
+months[5] = "Oct";
+months[5] = "Nov";
+months[5] = "Dec";
         
 var weekday = new Array(7);
 weekday[0] = "Sunday";
@@ -136,7 +136,7 @@ weekday[6] = "Saturday";
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
-var mm = weekday[today.getMonth()];
+var mm = months[today.getMonth()];
 var yyyy = today.getFullYear();
 
 var today_new = dd + ' ' + mm + ' ' + yyyy;
