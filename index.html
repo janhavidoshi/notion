@@ -86,6 +86,7 @@ h1 {
     
     <div class="card">
       <div class="date" id="date"></div>
+      <div class="day" id="date"></div>
       <div class="clock">
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
@@ -101,7 +102,9 @@ h1 {
 <script>
     function date() {
 var today = new Date();
-document.getElementById('date').innerHTML = today.toDateString();
+var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+document.getElementById('day').innerHTML = today.toDateString();
+document.getElementById('date').innerHTML = days[today.getDay()];
 }
 
 
