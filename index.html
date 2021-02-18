@@ -75,7 +75,15 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
-
+        
+.day {
+    display: block;
+    min-width: 162px;
+    /* padding-right: 30px; */
+    /* border-right: 2px solid #295C7B; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
     </style>
 </head>
 <body>
@@ -86,7 +94,7 @@ h1 {
     
     <div class="card">
       <div class="date" id="date"></div>
-      <div class="date" id="day"></div>
+      <div class="day" id="day"></div>
       <div class="clock">
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
@@ -102,9 +110,19 @@ h1 {
 <script>
     function date() {
 var today = new Date();
-var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 document.getElementById('date').innerHTML = today.toDateString();
-document.getElementById('day').innerHTML = days[today.getDay()];
+        
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+var n = weekday[today.getDay()];
+
+document.getElementById('day').innerHTML = n;
 }
 
 
